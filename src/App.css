@@ -1,38 +1,205 @@
-.App {
-  text-align: center;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 1140px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.justify-content-between {
+  align-items: stretch !important;
+  justify-content: space-between !important;
   display: flex;
-  flex-direction: column;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.navbar {
+  display: grid;
+  grid-template-columns: 5fr 0.7fr;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  background-color: #343a40 !important;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+  color: #fff;
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+header .cart {
+  position: relative;
+  cursor: pointer;
+}
+
+header .cart box-icon {
+  width: 45px;
+  height: 45px;
+}
+
+header .cart span {
+  position: absolute;
+  top: -0.6rem;
+  right: -1.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  padding: 0rem;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: crimson;
 }
 
-.App-link {
-  color: #61dafb;
+.titulo-header {
+  text-align: center !important;
+  padding-bottom: 1.5rem !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  padding-bottom: 1.5rem !important;
+  padding-top: 3rem !important;
+  padding-left: 1rem !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.titulo-header h1 {
+  margin-top: 1.5rem !important;
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.container-productos {
+  max-width: 1140px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.list-productos {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center !important;
+  margin-bottom: 1rem !important;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.productos {
+  display: flex;
+  flex: 1 0 0%;
+  flex-direction: column;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-bottom: 1.5rem !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  position: relative;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.card-header-productos {
+  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.nom-productos-header {
+  font-weight: 700 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.card-body-productos {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.card-img-top {
+  width: 100%;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+  vertical-align: middle;
+  border-style: none;
+}
+
+.precio-titulo {
+  margin-bottom: 0.75rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+.list-detalles-producto {
+  margin-bottom: 1.5rem !important;
+  margin-top: 1rem !important;
+  padding-left: 0;
+  list-style: none;
+}
+
+.brn-add-carriot {
+  display: block;
+  width: 100%;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  font-weight: 400;
+  text-align: center;
+  user-select: none;
+  border: 1px solid transparent;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  padding: 0.2rem 0.2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    text-decoration: none;
+}
+
+
+input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
