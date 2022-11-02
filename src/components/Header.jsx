@@ -13,19 +13,20 @@ const Layout = () => {
       <div className="container">
       <div className="justify-content-between">
         <main>
-            <nav className="navbar ">
-
-                <Link className="navbar-brand"  to='/'>TIENDA Y ACCESORIOS UNIR</Link>{' '}
-                <Link className="navbar-brand"  to='/producto'>PRODUCTOS</Link>
-                <Link to="/Carrito">
-                <div className="cart">
-                <FaCartPlus style={{color: 'white', fontSize: '25px'}}/>
-                <span className="item_total">{carritoCompra.length}</span>
-                 </div>
-                 </Link>
+            <nav>
+            <ul className="nav-new">
+            <li ><Link  className="navbar-brand"  to='/'>TIENDA Y ACCESORIOS UNIR </Link></li>
+            <li> <Link className="navbar-brand"  to='/producto'>PRODUCTOS</Link></li>
+            <li style={{ float: 'right', paddingRight: '25px' }}><Link to="/Carrito">
+            <div className="cart">
+            <FaCartPlus style={{color: 'white', fontSize: '25px'}}/>
+            <span className="item_total">{carritoCompra.length}</span>
+             </div>
+             </Link></li>
+          </ul>
             </nav>
             <section>
-               <Outlet />
+               <Outlet /> {/* Establece espacio donde renderizamos el resultdo de las rutas  */}
             </section>
         </main>
         </div>

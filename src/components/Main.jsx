@@ -6,18 +6,19 @@ const Main = () => {
   const { productos, addCarritoCompra } = useContext(ContenedorProd);
   const [parametroBusqueda, setPparametroBusqueda] = useSearchParams();
 
-  const listProd = productos[0];
-
+  //hook que me permite obtener el string(bsuqueda) de la URL
   const filtro = parametroBusqueda.get("filtro") ?? "";
-
+  //Funcion para enviar texto del input al URL
   const filtrar = (e) => {
     setPparametroBusqueda({ filtro: e.target.value });
   };
+
   return (
     <div>
       <div className="titulo-header">
         <h1>Lista de Productos</h1>
-        <p className="lead">Encuentra el Producto que estas buscandos</p>
+        <p className="lead">Encuentra el Producto que estas buscando
+        </p>
         <input
           placeholder="Ingresa el Producto Buscar"
           value={filtro}
@@ -28,7 +29,8 @@ const Main = () => {
 
       <div className="container-productos" id="lista-productos">
         <div className="list-productos">
-          {listProd
+        
+          {productos
             .filter((prod) => {
               if (!filtro) return true;
               const nombre = prod.title.toLowerCase();

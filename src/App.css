@@ -10,7 +10,6 @@ body {
 }
 
 .container {
-  max-width: 1140px;
   text-align: center;
 }
 
@@ -47,24 +46,27 @@ body {
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
+  text-decoration:none;
 }
 
 header .cart {
   position: relative;
   cursor: pointer;
+  padding-top: 10px;
 }
 
 header .cart box-icon {
   width: 45px;
   height: 45px;
+
 }
 
 header .cart span {
   position: absolute;
-  top: -0.6rem;
-  right: -1.3rem;
-  width: 1.5rem;
-  height: 1.5rem;
+  top: -0.1rem;
+  right: -1rem;
+  width: 1.4rem;
+  height: 1.4rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -104,7 +106,6 @@ header .cart span {
 }
 
 .list-productos {
-
   display: grid;
   grid-template-columns: auto auto auto;
   text-align: center !important;
@@ -112,10 +113,10 @@ header .cart span {
   margin-right: -15px;
   margin-left: -15px;
   width: 100%;
-padding-right: 15px;
-padding-left: 15px;
-margin-right: auto;
-margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .productos {
@@ -199,18 +200,19 @@ margin-left: auto;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-
-input[type=text] {
+input[type="text"] {
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
 }
 
-.mt-3, .my-3 {
+.mt-3,
+.my-3 {
   margin-top: 1rem !important;
 }
 .row {
@@ -222,7 +224,8 @@ input[type=text] {
   margin-left: -15px;
 }
 
-.mb-3, .my-3 {
+.mb-3,
+.my-3 {
   margin-bottom: 1rem !important;
 }
 .justify-content-center {
@@ -233,43 +236,62 @@ input[type=text] {
   display: -ms-flexbox !important;
   display: flex !important;
 }
-.h2, h2 {
+.h2,
+h2 {
   font-size: 2rem;
 }
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  margin-bottom: .5rem;
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
 }
 
-.form-group{
+.form-group {
   margin-bottom: 1rem;
-
 }
 
 .columna {
-flex-basis: 0;
--ms-flex-positive: 1;
-flex-grow: 1;
-max-width: 100%;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+  padding-right: 150px;
+  padding-left: 150px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.table-responsive{
+.table-responsive {
   display: block;
-width: 100%;
-overflow-x: auto;
+  width: 100%;
+  overflow-x: auto;
 }
 
-.table{
+.table {
   width: 100%;
   margin-bottom: 1rem;
   padding-left: 1rem;
   color: #212529;
   border-collapse: collapse;
-
 }
 
 .table figure {
@@ -282,9 +304,80 @@ overflow-x: auto;
   object-fit: fill;
 }
 
-
-.item-cantidad{
+.item-cantidad {
   display: grid;
-  grid-template-columns:auto auto auto ;
+  grid-template-columns: auto auto auto;
   align-items: center;
 }
+
+.botonesCarrito {
+  -ms-flex-pack: justify !important;
+  justify-content: space-between !important;
+
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-right: 200px;
+  padding-left: 200px;
+  padding-bottom: 50px;
+
+  box-sizing: border-box;
+}
+
+.boton1{
+  background-color: #007bff; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.boton2{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.nav-new {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.nav-new li {
+  float: left;
+  margin-left: 25px;
+  border-right:1px solid #bbb;
+}
+
+.nav-new li:last-child {
+  border-right: none;
+}
+
+.nav-new li Link {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-new li Link:hover:not(.active) {
+  background-color: #111;
+}
+
+.nav-new active {
+  background-color: #04AA6D;
+}
+

@@ -8,14 +8,13 @@ export function ContenedorProdProvider(props) {
 
   const [productos, setProductos] = useState([]);
   const [carritoCompra, setCarritoCompra] = useState(() => {
-    const datCarrito = localStorage.getItem("dataCar");
-
+    const datCarrito = localStorage.getItem("dataCar"); //obtener información del localStorage y guardarla en carritoCompra
     const dataCarrito = JSON.parse(datCarrito);
-
     return dataCarrito;
   });
   const [total, setTotal] = useState(0);
 
+  //Cargar productos 
   useEffect(() => {
     const productos = dataProductos.items;
     if (productos) {
@@ -60,8 +59,9 @@ export function ContenedorProdProvider(props) {
     localStorage.setItem("dataCar", JSON.stringify(carritoCompra));
   }, [carritoCompra]);
 
+  //Guardar variables
   const propCarrito = {
-    productos: [productos],
+    productos: productos,
     addCarritoCompra: addCarritoCompra,
     carritoCompra: [carritoCompra, setCarritoCompra],
     total: [total, setTotal],
