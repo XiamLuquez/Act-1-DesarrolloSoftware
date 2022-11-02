@@ -1,93 +1,77 @@
-import {createContext} from 'react'
+import { createContext } from "react";
 import dataProductos from "../Datos";
-import {useState, useEffect} from "react";
-
+import { useState, useEffect } from "react";
 
 export const ContenedorProd = createContext(); // nombre contexto que almacena datos
-export function ContenedorProdProvider(props) { // comoponente que engloba otros componentes
+export function ContenedorProdProvider(props) {
+  // comoponente que engloba otros componentes
 
-    const [productos, setProductos] = useState([]);
-    const [carritoCompra, setCarritoCompra] = useState([]);
-    const [total, setTotal] = useState(0);
+  const [productos, setProductos] = useState([]);
+  const [carritoCompra, setCarritoCompra] = useState(() => {
+    const datCarrito = localStorage.getItem("dataCar");
 
-    useEffect(() => {
-        const productos = dataProductos.items
-        if (productos) {
-            setProductos(productos)
-        } else {
-            setProductos([])
-        }
+    const dataCarrito = JSON.parse(datCarrito);
 
-    }, [])
+    return dataCarrito;
+  });
+  const [total, setTotal] = useState(0);
 
-      //agregar Procucto al Carrito
-
-    const addCarritoCompra = (id) => {
-        const veriProd = carritoCompra.every(item => {
-            return item.id !== id; // preguntamos si se cumple la condicion
-
-        })
-        if (veriProd) {
-            const Prod = productos.filter(productos => {
-                return productos.id === id; // buscamos el producto en la lista de productos
-            })
-            console.log(Prod);
-
-            setCarritoCompra([
-                ...carritoCompra,
-                ... Prod
-            ]);
-        } else {
-            alert("El producto a esta agreagdo al Carrito");
-        }
+  useEffect(() => {
+    const productos = dataProductos.items;
+    if (productos) {
+      setProductos(productos);
+    } else {
+      setProductos([]);
     }
+  }, []);
 
-    //Actualizar Total
-    useEffect(() => {
-        const getTotal = () =>{
-            const tot = carritoCompra.reduce((prev,item) => {
-                return prev + (item.price * item.cantidad);
-            },0)
-            setTotal(tot);
-        }
-        getTotal();
+  //agregar Procucto al Carrito
 
-},[carritoCompra])
+  const addCarritoCompra = (id) => {
+    const veriProd = carritoCompra.every((item) => {
+      return item.id !== id; // preguntamos si se cumple la condicion
+    });
+    if (veriProd) {
+      const Prod = productos.filter((productos) => {
+        return productos.id === id; // buscamos el producto en la lista de productos
+      });
+      console.log(Prod);
 
-//guardar en localStorage
-    useEffect(() => {
-
-        const dataCar= JSON.parse(localStorage.getItem('dataCar'));
-
-        if (dataCar) {
-        console.log("dataCar: " + dataCar);
-            setCarritoCompra(dataCar);
-        }
-
-    }, [])
-
-    useEffect(() => {
-
-        localStorage.setItem('dataCar', JSON.stringify(carritoCompra));
-
-    }, [carritoCompra])
-
-
-
-    const propCarrito = {
-        productos: [productos],
-        addCarritoCompra: addCarritoCompra,
-        carritoCompra: [carritoCompra, setCarritoCompra],
-        total: [total, setTotal]
-
+      setCarritoCompra([...carritoCompra, ...Prod]);
+    } else {
+      alert("El producto a esta agreagdo al Carrito");
     }
+  };
 
-    return (
-        <>
-            <ContenedorProd.Provider value={propCarrito}>
-                {
-                props.children
-            } </ContenedorProd.Provider>
-        </>
-    )
+  //Actualizar Total
+  useEffect(() => {
+    const getTotal = () => {
+      const tot = carritoCompra.reduce((prev, item) => {
+        return prev + item.price * item.cantidad;
+      }, 0);
+      setTotal(tot);
+    };
+    getTotal();
+  }, [carritoCompra]);
+
+  //guardar en localStorage
+
+  useEffect(() => {
+    localStorage.setItem("dataCar", JSON.stringify(carritoCompra));
+  }, [carritoCompra]);
+
+  const propCarrito = {
+    productos: [productos],
+    addCarritoCompra: addCarritoCompra,
+    carritoCompra: [carritoCompra, setCarritoCompra],
+    total: [total, setTotal],
+  };
+
+  return (
+    <>
+      <ContenedorProd.Provider value={propCarrito}>
+        {props.children}{" "}
+      </ContenedorProd.Provider>
+    </>
+  );
 }

@@ -16,7 +16,7 @@ const Layout = () => {
             <nav className="navbar ">
 
                 <Link className="navbar-brand"  to='/'>TIENDA Y ACCESORIOS UNIR</Link>{' '}
-                <Link className="navbar-brand"  to='/producto'>PRODCUTOS</Link>
+                <Link className="navbar-brand"  to='/producto'>PRODUCTOS</Link>
                 <Link to="/Carrito">
                 <div className="cart">
                 <FaCartPlus style={{color: 'white', fontSize: '25px'}}/>
