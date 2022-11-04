@@ -43,7 +43,7 @@ const Carrito = () => {
 
   return (
     <div>
-      <div className="container">
+      <div className="container padding-ar-ab">
         <div className="row mt-3">
           <div className="columna">
             <h2 className="titulo-header ti-carrito">Realizar Compra</h2>

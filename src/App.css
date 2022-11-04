@@ -44,10 +44,20 @@ body {
   font-size: 34px;
 }
 
+@media (min-width: 992px) {
+.padding-ar-ab {
+  padding: 80px 0 !important;
+  }
+}
+
+.padding-ar-ab {
+  padding: 50px 0;
+}
+
 header .cart {
   position: relative;
   cursor: pointer;
-  padding-top: 10px;
+  padding-top: 2px;
   padding-right: 100px;
 }
 
@@ -60,18 +70,18 @@ header .cart box-icon {
 header .cart span {
   position: absolute;
   top: -0.1rem;
-  right: 5.5rem;
-  width: 1.4rem;
+  right: 5.6rem;
+  width: 1.3rem;
   height: 1.4rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #e46072;
+  color: #fff;
   padding: 0rem;
   font-size: 1rem;
   font-weight: 700;
-  background-color: #fff;
+  background-color: #f1233e;
 }
 
 header .cart label {
@@ -91,19 +101,16 @@ header .cart label {
   font-weight: 700;
 }
 
-
 .titulo-header {
   text-align: center !important;
   padding-bottom: 1.5rem !important;
   margin-right: auto !important;
   margin-left: auto !important;
   padding-bottom: 1.5rem !important;
-  padding-top: 3rem !important;
   padding-left: 1rem !important;
 }
 
 .ti-carrito {
-  margin-top: 1.5rem !important;
   font-size: 3.5rem;
   font-weight: 300;
   line-height: 1.2;
@@ -111,7 +118,6 @@ header .cart label {
 }
 
 .titulo-header h1 {
-  margin-top: 1.5rem !important;
   font-size: 3.5rem;
   font-weight: 300;
   line-height: 1.2;
@@ -200,7 +206,7 @@ input[type="text"] {
 
 .mt-3,
 .my-3 {
-  margin-top: 1rem !important;
+  margin-top: 0rem !important;
 }
 .row {
   display: -ms-flexbox;
@@ -255,7 +261,14 @@ h6 {
 .form-group {
   margin-bottom: 1rem;
 }
+bold {
+  font-weight: 700;
 
+}
+
+h2, h3, h4, h5 {
+  font-weight: 300;
+}
 .columna {
   flex-basis: 0;
   -ms-flex-positive: 1;
@@ -338,7 +351,7 @@ h6 {
 
 .nav-new li {
   float: left;
-  margin-left: 25px;
+  margin-left: 15px;
   border-right:1px solid #bbb;
 }
 
@@ -446,8 +459,7 @@ h6 {
 .cont-info {
   text-align: center;
   background-color: #DADADA;
-  padding: 10px 0;
-  margin-top: 20px;;
+  padding: 20px 0;
 }
 @media (min-width: 992px) {
   .info img {
@@ -487,4 +499,57 @@ button {
 
 ul.list-detalles-producto {
   font-size: 14px;
+}
+
+#contact_form input, 
+#contact_form textarea {
+  width: 100%;
+}
+
+#contact_form input#submit_button {
+  width: auto;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 7px 40px;
+}
+
+#contact_form input#submit_button:hover {
+  background-color: #5d5e5f;
+}
+
+.img-nosotros {
+  margin-bottom: 30px;
+}
+
+.img-nosotros img {
+  width: 100%;
+}
+
+.carrito-header .cart {
+  position: relative;
+  z-index: 999999;
+}
+
+@media (max-width: 876px) {
+  .nav-new li {
+    float: none;
+    border-right: 0px solid #bbb;
+  }
+  .item-productos {
+    padding: 0px 0;
+  }
+  
+  .icono-carr {
+    float: right;
+    padding-right: 25px;
+    position: absolute;
+    right: 40px;
+    top: 0;
+    padding: 12px 0;
+  }
+  .element.style {
+    padding: 6px 0 12px 0;
+    padding: 6px 0 12px 0;
+  }
 }

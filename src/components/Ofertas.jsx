@@ -5,11 +5,10 @@ const Ofertas = () => {
     const { productos, addCarritoCompra } = useContext(ContenedorProd);
     let prodOfertas = productos.filter(productos => productos.price <= 150000);
     return (
-        <div>  
-        <div className="container-productos container" id="lista-productos">
+  <div className="padding-ar-ab">  
+      <div className="container-productos container" id="lista-productos">
         <div className="titulo-header">
         <h1>Ofertas del Día</h1>
-     
       </div>
         
         <div className="list-productos row">
@@ -41,8 +40,8 @@ const Ofertas = () => {
             </div>
           ))}
       </div>
-      </div>
-      </div>
+    </div>
+  </div>
         
      
       );

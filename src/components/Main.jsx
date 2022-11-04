@@ -15,7 +15,7 @@ const Main = () => {
   };
 
   return (
-    <div>
+    <div className="padding-ar-ab">
       <div className="titulo-header">
         <h1>Lista de Productos</h1>
         <p className="lead">Encuentra el Producto que estas buscando
