@@ -45,7 +45,7 @@ export function ContenedorProdProvider(props) {
 
       setCarritoCompra([...carritoCompra, ...Prod]);
     } else {
-      alert("El producto a esta agregado al Carrito de Compras");
+      alert("El producto ya esta agregado al Carrito de Compras");
     }
   };
 

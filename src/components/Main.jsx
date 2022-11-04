@@ -3,6 +3,7 @@ import ListProductos from "./ListProductos";
 import { useSearchParams } from "react-router-dom";
 
 
+
 const Main = () => {
     const [parametroBusqueda, setPparametroBusqueda] = useSearchParams();
 

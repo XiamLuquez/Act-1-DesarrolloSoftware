@@ -2,20 +2,14 @@ import React from 'react';
 import Portada from '../images/banner.PNG';
 import Mujer from '../images/mujer.jpg';
 import Hombre from '../images/hombre.jpg';
+import Banner from './Banner'
 import Nino from '../images/nino.jpg';
-import {Link, Outlet} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const Inicio = () => {
   return (
      <main className='inicio'>
-      <section>
-        <div className="bannerini">
-          <img src={Portada} alt="" className='banner'/>
-        </div>
-        <div className="titulo">
-          <h1>Descubre nuestros productos</h1>
-        </div>
-      </section> 
+     <Banner Portada={Portada}/>
       <section className='container'>
         <div className="categorias row">
           <div className="mujeres col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -42,9 +36,7 @@ const Inicio = () => {
               </div>
             </Link>
           </div>
-          <div>
-               <Outlet /> {/* Establece espacio donde renderizamos el resultdo de las rutas  */}
-          </div>
+      
         </div>
       </section>
       
