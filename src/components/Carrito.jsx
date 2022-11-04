@@ -46,7 +46,7 @@ const Carrito = () => {
       <div className="container">
         <div className="row mt-3">
           <div className="columna">
-            <h2 className="titulo-header">Realizar Compra</h2>
+            <h2 className="titulo-header ti-carrito">Realizar Compra</h2>
             <form id="procesar-pago" action="#" method="post">
               <div className="form-group">
                 <div>
@@ -121,14 +121,14 @@ const Carrito = () => {
                   )}{" "}
                 </tbody>
 
-                <tr>
-                  <th colSpan="4" scope="col" className="text-right">
+                <section>
+                  <div colSpan="4" scope="col" className="text-right total">
                     TOTAL :
-                  </th>
-                  <th scope="col">
+                  </div>
+                  <div scope="col" className="ti-precio">
                     <p>$ {total}</p>
-                  </th>
-                </tr>
+                  </div>
+                </section>
               </table>
               <div className="botonesCarrito">
               <Link className="navbar-brand"  to='/producto'>

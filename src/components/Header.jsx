@@ -10,13 +10,13 @@ const Layout = () => {
 
   return (
       <header>
-      <div className="container">
+      <div className="container-fluid">
       <div className="justify-content-between">
         <main>
             <nav>
             <ul className="nav-new">
-            <li ><Link  className="navbar-brand"  to='/'>TIENDA Y ACCESORIOS UNIR </Link></li>
-            <li> <Link className="navbar-brand"  to='/producto'>PRODUCTOS</Link></li>
+            <li ><Link  className="navbar-brand logo"  to='/'>URBANO </Link></li>
+            <li className='li-pro'> <Link className="navbar-brand item-productos"  to='/producto'>Productos</Link></li>
             <li style={{ float: 'right', paddingRight: '25px' }}><Link to="/Carrito">
             <div className="cart">
             <FaCartPlus style={{color: 'white', fontSize: '25px'}}/>
@@ -28,9 +28,11 @@ const Layout = () => {
             <section>
                <Outlet /> {/* Establece espacio donde renderizamos el resultdo de las rutas  */}
             </section>
+            
         </main>
         </div>
         </div>
+      
         </header>
     
     )

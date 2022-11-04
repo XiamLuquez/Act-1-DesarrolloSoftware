@@ -2,6 +2,7 @@ import "./App.css";
 import Main from "./components/Main";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header";
+import Footer from "./components/footer";
 import Home from "./components/Inicio";
 import Carrito from "./components/Carrito";
 
@@ -11,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Header />}>
-            <Route index element={<Home />} />
+            
             <Route path="producto" element={<Main />}>
               {" "}
             </Route>
@@ -19,6 +20,10 @@ function App() {
             <Route path="*" element={<Navigate replace to="/" />} />
           </Route>
         </Routes>
+        <Routes>
+          <Route index element={<Home />} />
+        </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

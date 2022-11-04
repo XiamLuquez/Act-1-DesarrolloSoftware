@@ -9,7 +9,14 @@ export function ContenedorProdProvider(props) {
   const [productos, setProductos] = useState([]);
   const [carritoCompra, setCarritoCompra] = useState(() => {
     const datCarrito = localStorage.getItem("dataCar"); //obtener información del localStorage y guardarla en carritoCompra
-    const dataCarrito = JSON.parse(datCarrito);
+    let dataCarrito;
+     //preguntamos si existe el localStorage
+    if (datCarrito) {
+       dataCarrito = JSON.parse(datCarrito);
+    }else{
+       dataCarrito = [];
+    }
+  
     return dataCarrito;
   });
   const [total, setTotal] = useState(0);
@@ -34,11 +41,11 @@ export function ContenedorProdProvider(props) {
       const Prod = productos.filter((productos) => {
         return productos.id === id; // buscamos el producto en la lista de productos
       });
-      console.log(Prod);
+    
 
       setCarritoCompra([...carritoCompra, ...Prod]);
     } else {
-      alert("El producto a esta agreagdo al Carrito");
+      alert("El producto a esta agregado al Carrito de Compras");
     }
   };
 

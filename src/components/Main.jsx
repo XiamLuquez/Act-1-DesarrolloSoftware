@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
-import { ContenedorProd } from "../context/DataProvider";
+import React from "react";
+import ListProductos from "./ListProductos";
 import { useSearchParams } from "react-router-dom";
 
-const Main = () => {
-  const { productos, addCarritoCompra } = useContext(ContenedorProd);
-  const [parametroBusqueda, setPparametroBusqueda] = useSearchParams();
 
-  //hook que me permite obtener el string(bsuqueda) de la URL
+const Main = () => {
+    const [parametroBusqueda, setPparametroBusqueda] = useSearchParams();
+
+  //hook que me permite obtener el string(busqueda) de la URL
   const filtro = parametroBusqueda.get("filtro") ?? "";
-  //Funcion para enviar texto del input al URL
+  //Funcion para enviar texto del input al url
   const filtrar = (e) => {
     setPparametroBusqueda({ filtro: e.target.value });
   };
@@ -27,43 +27,11 @@ const Main = () => {
         ></input>
       </div>
 
-      <div className="container-productos" id="lista-productos">
-        <div className="list-productos">
-        
-          {productos
-            .filter((prod) => {
-              if (!filtro) return true;
-              const nombre = prod.title.toLowerCase();
-              return nombre.includes(filtro.toLowerCase());
-            })
-            .map((prod, i) => (
-              <div className="productos" key={prod.id}>
-                <div className="card-header-productos">
-                  <h4 className="nom-productos-header">{prod.title}</h4>
-                </div>
-                <div className="card-body-productos">
-                  <img src={prod.image} className="card-img-top" />
-                  <h1 className="precio-titulo">
-                    $<span className=""> {prod.price}</span>
-                  </h1>
-                  <ul className="list-detalles-producto">
-                    <li></li>
-                    <li>MArca: {prod.category}</li>
-                    <li>Envio Gratis</li>
-                  </ul>
-                  <a
-                    onClick={() => addCarritoCompra(prod.id)}
-                    className="brn-add-carriot"
-                    data-id="4"
-                  >
-                    Agregar al Carrito
-                  </a>
-                </div>
-              </div>
-            ))}
-        </div>
+      <div className="container-productos container" id="lista-productos">
+      <ListProductos filtro={filtro} />
       </div>
     </div>
+
   );
 };
 
